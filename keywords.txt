@@ -1,0 +1,12 @@
+# SYNTAX COLORING MAP
+
+## Datatypes (KEYWORD1)
+
+CMotor              KEYWORD1
+
+## Methods and function (KEYWORD2)
+
+run                 KEYWORD2
+stop                KEYWORD2
+setSpeed            KEYWORD2
+getState            KEYWORD2
