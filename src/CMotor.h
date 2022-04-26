@@ -19,7 +19,7 @@
 
 class CMotor {
     public:
-        CMotor();
+        CMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC);
 
         void run(uint16_t ms);
 
@@ -29,11 +29,11 @@ class CMotor {
         // negative is CCW
         void setSpeed(int16_t value);
         
-        // Get the state of the engine.
-        // Returns one of three options:
+        // State of the motor.
+        // Returns one of three chooses:
         // -1 - motor rotates counterclockwise (CCW)
         //  0 - motor stopped
-        //  1 - run clockwise (CW)
+        //  1 - motor rotates clockwise (CW)
         int8_t getState();
 
     private:
