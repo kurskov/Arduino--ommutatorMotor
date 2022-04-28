@@ -1,5 +1,5 @@
 /*
-    Morse code
+    Commutator motor
     
     Author: Dmitrii Kurskov <dmitrii@kurskov.ru>
     GitHub: https://github.com/kurskov/Arduino-MorseCode
@@ -21,13 +21,16 @@ class CMotor {
     public:
         CMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC);
 
-        void run(uint16_t ms);
+        void run(uint16_t ms = 0);
 
-        void stop(uint16_t ms);
+        void stop(uint16_t ms = 0);
 
-        // positive is CW
-        // negative is CCW
-        void setSpeed(int16_t value);
+        // Sets the rotate speed.
+        // This function not run the motor, but can change speed in the work time.
+        // If you set the value as 0, the motor will stop. (?)
+        // - positive is CW
+        // - negative is CCW
+        void setSpeed(int16_t speed);
         
         // State of the motor.
         // Returns one of three chooses:

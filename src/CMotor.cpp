@@ -20,8 +20,8 @@ void CMotor::stop(uint16_t ms) {
     setSpeed(0);
 }
 
-void CMotor::setSpeed(int16_t value) {
-    _speed = value;
+void CMotor::setSpeed(int16_t speed) {
+    _speed = speed;
 }
        
 
