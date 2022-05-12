@@ -1,15 +1,15 @@
 /*
-    Commutator motor
+    Brushed motor
     
     Author: Dmitrii Kurskov <dmitrii@kurskov.ru>
-    GitHub: https://github.com/kurskov/Arduino-MorseCode
+    GitHub: https://github.com/kurskov/Arduino-BrushedMotor
     Version: 1.0.0
 
     MIT license
 */
 
-#ifndef _DK_CMotor_h
-#define _DK_CMotor_h
+#ifndef _DK_BrushedMotor_h
+#define _DK_BrushedMotor_h
 
 #if defined(ARDUINO) && ARDUINO >= 100
     #include <Arduino.h>
@@ -17,9 +17,9 @@
     #include <WProgram.h>
 #endif
 
-class CMotor {
+class BrushedMotor {
     public:
-        CMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC);
+        BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC);
 
         void run(uint16_t ms = 0);
 
@@ -43,4 +43,4 @@ class CMotor {
         int16_t _speed = 0;
 };
 
-#endif // _DK_CMotor_h
+#endif // _DK_BrushedMotor_h

@@ -2,7 +2,7 @@
 
 ## Datatypes (KEYWORD1)
 
-CMotor              KEYWORD1
+BrushedMotor        KEYWORD1
 
 ## Methods and function (KEYWORD2)
 
