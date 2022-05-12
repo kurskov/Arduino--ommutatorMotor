@@ -6,7 +6,7 @@ Library for controlling a brushed motor on the Arduino platform.
 
 ## Initialization
 
-`BMotor motor();`
+`BrushedMotor motor();`
 
 ## Basic functions
 
