@@ -9,7 +9,21 @@
 
 // Constructor
 
-BrushedMotor::BrushedMotor() {}
+BrushedMotor::BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC) {
+    _pinA = pinA;
+    _pinB = pinB;
+    _pinC = pinC;
+
+    pinMode(_pinA, OUTPUT);
+    digitalWrite(_pinA, 0);
+    pinMode(_pinB, OUTPUT);
+    digitalWrite(_pinB, 0);
+    
+    if (_pinC != 255) {
+        pinMode(_pinC, OUTPUT);
+        digitalWrite(_pinC, 0);
+    }
+}
 
 
 // Basic function

@@ -19,7 +19,7 @@
 
 class BrushedMotor {
     public:
-        BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC);
+        BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC = 255);
 
         void run(uint16_t ms = 0);
 
@@ -41,6 +41,9 @@ class BrushedMotor {
 
     private:
         int16_t _speed = 0;
+        uint8_t pinA; 
+        uint8_t pinB; 
+        uint8_t pinC; // used for 3-wire connection
 };
 
 #endif // _DK_BrushedMotor_h
