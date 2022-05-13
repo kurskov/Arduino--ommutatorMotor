@@ -25,6 +25,8 @@ class BrushedMotor {
 
         void stop(uint16_t ms = 0);
 
+        void brake();
+
         // Sets the rotate speed.
         // This function not run the motor, but can change speed in the work time.
         // If you set the value as 0, the motor will stop. (?)

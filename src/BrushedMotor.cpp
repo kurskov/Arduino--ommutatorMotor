@@ -15,20 +15,33 @@ BrushedMotor::BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC) {
     _pinC = pinC;
 
     pinMode(_pinA, OUTPUT);
-    digitalWrite(_pinA, 0);
+    digitalWrite(_pinA, LOW);
     pinMode(_pinB, OUTPUT);
-    digitalWrite(_pinB, 0);
+    digitalWrite(_pinB, LOW);
     
     if (_pinC != 255) {
         pinMode(_pinC, OUTPUT);
-        digitalWrite(_pinC, 0);
+        digitalWrite(_pinC, LOW);
     }
 }
 
 
 // Basic function
 
-void BrushedMotor::run(uint16_t ms) {}
+void BrushedMotor::run(uint16_t ms) {
+    if (_speed == 0) {
+        brake();
+        digitalWrite(_pinA, LOW);
+        digitalWrite(_pinB, LOW);
+    }
+    if (_speed > 0) {
+        digitalWrite(_pinA, HIGH);
+        digitalWrite(_pinB, LOW);
+    } else {
+        digitalWrite(_pinA, LOW);
+        digitalWrite(_pinB, HIGH);
+    }
+}
 
 void BrushedMotor::stop(uint16_t ms) {
     setSpeed(0);
@@ -36,6 +49,12 @@ void BrushedMotor::stop(uint16_t ms) {
 
 void BrushedMotor::setSpeed(int16_t speed) {
     _speed = speed;
+    run();
+}
+
+void BrushedMotor::brake() {
+    digitalWrite(_pinA, HIGH);
+    digitalWrite(_pinB, HIGH);
 }
        
 
