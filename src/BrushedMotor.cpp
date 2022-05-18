@@ -27,7 +27,7 @@ BrushedMotor::BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC) {
 
 // Basic function
 
-void BrushedMotor::run(uint16_t ms) {
+void BrushedMotor::run() {
     if (_speed == 0) {
         stop();
     }

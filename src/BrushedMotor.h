@@ -23,8 +23,16 @@ class BrushedMotor {
     public:
         BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC = 255);
 
-        void run(uint16_t ms = 0);
+        // Runs motor with set speed.
+        // Changes speed if motor is running.
+        // If you set the value as 0, the motor will stop.
+        // Sign of speed value sets turn direction:
+        // - positive is forward
+        // - negative is backward
+        void run(int16_t speed = _speed);
 
+        // Smooth motor stop.
+        // 
         void stop();
 
         // Motor blocking.
@@ -32,13 +40,6 @@ class BrushedMotor {
         // If used pin C (PWM), it sets as LOW.
         void brake();
 
-        // Sets the rotate speed.
-        // This function not run the motor, but can change speed in the work time.
-        // If you set the value as 0, the motor will stop.
-        // - positive is CW
-        // - negative is CCW
-        void setSpeed(int16_t speed);
-        
         // State of the motor.
         // Returns one of three chooses:
         // -1 - motor rotates counterclockwise (CCW)
