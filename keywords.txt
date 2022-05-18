@@ -8,5 +8,6 @@ BrushedMotor        KEYWORD1
 
 run                 KEYWORD2
 stop                KEYWORD2
+brake               KEYWORD2
 setSpeed            KEYWORD2
 getState            KEYWORD2

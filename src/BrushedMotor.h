@@ -1,5 +1,7 @@
 /*
     Brushed motor
+
+    Supported drivers: L298N, L9110S, MX1508, TA6586, TB6612.
     
     Author: Dmitrii Kurskov <dmitrii@kurskov.ru>
     GitHub: https://github.com/kurskov/Arduino-BrushedMotor
@@ -23,13 +25,16 @@ class BrushedMotor {
 
         void run(uint16_t ms = 0);
 
-        void stop(uint16_t ms = 0);
+        void stop();
 
+        // Motor blocking.
+        // Sets pins A and B as HIGH.
+        // If used pin C (PWM), it sets as LOW.
         void brake();
 
         // Sets the rotate speed.
         // This function not run the motor, but can change speed in the work time.
-        // If you set the value as 0, the motor will stop. (?)
+        // If you set the value as 0, the motor will stop.
         // - positive is CW
         // - negative is CCW
         void setSpeed(int16_t speed);
