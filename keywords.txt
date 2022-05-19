@@ -1,0 +1,12 @@
+# SYNTAX COLORING MAP
+
+## Datatypes (KEYWORD1)
+
+BrushedMotor        KEYWORD1
+
+## Methods and function (KEYWORD2)
+
+run                 KEYWORD2
+stop                KEYWORD2
+brake               KEYWORD2
+getState            KEYWORD2
