@@ -29,7 +29,7 @@ class BrushedMotor {
         // Sign of speed value sets turn direction:
         // - positive is forward
         // - negative is backward
-        void run(int16_t speed = _speed);
+        void run(int16_t speed = 10000);
 
         // Smooth motor stop.
         void stop();
@@ -41,16 +41,16 @@ class BrushedMotor {
 
         // State of the motor.
         // Returns one of three chooses:
-        // -1 - motor rotates counterclockwise (CCW)
+        //  1 - motor rotates forward
         //  0 - motor stopped
-        //  1 - motor rotates clockwise (CW)
+        // -1 - motor rotates backward
         int8_t getState();
 
     private:
         int16_t _speed = 0;
-        uint8_t pinA; 
-        uint8_t pinB; 
-        uint8_t pinC; // used for 3-wire connection
+        uint8_t _pinA; 
+        uint8_t _pinB; 
+        uint8_t _pinC; // used for 3-wire connection
 };
 
 #endif // _DK_BrushedMotor_h

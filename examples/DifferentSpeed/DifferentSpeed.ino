@@ -13,7 +13,7 @@ void loop() {
     motor.run(-100);
     delay(1000);
     motor.brake();
-    delay.(1000);
+    delay(1000);
     motor.run();
     delay(1000);
     motor.stop();
