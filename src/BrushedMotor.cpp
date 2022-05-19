@@ -28,9 +28,9 @@ BrushedMotor::BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC) {
 // Basic function
 
 void BrushedMotor::run(int16_t speed) {
-    _speed = speed;
+    _speed = constrain(speed, -255, 255);
     if (_speed == 0) {
-        stop();
+        return stop();
     }
     if (_speed > 0) {
         digitalWrite(_pinA, HIGH);
@@ -39,6 +39,13 @@ void BrushedMotor::run(int16_t speed) {
         digitalWrite(_pinA, LOW);
         digitalWrite(_pinB, HIGH);
     }
+    // select PWM chanel
+    if (_pinC == 255) {
+        analogWrite(_pinA, abs(_speed));
+    } else {
+        analogWrite(_pinC, abs(_speed));
+    }
+
 }
 
 void BrushedMotor::stop() {
@@ -55,7 +62,7 @@ void BrushedMotor::brake() {
     digitalWrite(_pinB, HIGH);
     if (_pinC != 255) {
         pinMode(_pinC, OUTPUT);
-        digitalWrite(_pinC, LOW);
+        analogWrite(_pinC, abs(_speed));
     }
 }
    
