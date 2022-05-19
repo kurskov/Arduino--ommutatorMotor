@@ -32,7 +32,6 @@ class BrushedMotor {
         void run(int16_t speed = _speed);
 
         // Smooth motor stop.
-        // 
         void stop();
 
         // Motor blocking.

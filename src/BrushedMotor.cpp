@@ -27,7 +27,8 @@ BrushedMotor::BrushedMotor(uint8_t pinA, uint8_t pinB, uint8_t pinC) {
 
 // Basic function
 
-void BrushedMotor::run() {
+void BrushedMotor::run(int16_t speed) {
+    _speed = speed;
     if (_speed == 0) {
         stop();
     }
@@ -57,16 +58,12 @@ void BrushedMotor::brake() {
         digitalWrite(_pinC, LOW);
     }
 }
-
-void BrushedMotor::setSpeed(int16_t speed) {
-    _speed = speed;
-}
-       
+   
 
 // State
 
 int8_t BrushedMotor::getState() {
     if (_speed == 0) return 0;  // motor stopped
-    if (_speed > 0) return 1;   // CW
-    return -1;                  // CCW
+    if (_speed > 0) return 1;   // forward
+    return -1;                  // backward
 }

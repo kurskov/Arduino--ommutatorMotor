@@ -69,8 +69,6 @@ EN - PWM pin
 
 #### Brake
 
-#### Set motor speed
-
 ### Get state of motor
 
 #### Get direction of rotation
@@ -87,14 +85,11 @@ void setup() {
 }
 
 void loop() {
-    motor.setSpeed(150);
-    motor.run();
+    motor.run(150);
     delay(1000);
-    motor.setSpeed(50);
-    motor.run();
+    motor.run(50);
     delay(1000);
-    motor.setSpeed(-100);
-    motor.run();
+    motor.run(-100);
     delay(1000);
     motor.brake();
     delay.(1000);
